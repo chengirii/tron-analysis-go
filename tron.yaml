@@ -1,0 +1,30 @@
+# 钱包配置
+tron:
+  tokens : usdt
+  wallet-host: 192.168.3.193
+  wallet-port: 8090
+
+# 数据库配置
+database-neo4j:
+  username:
+  password:
+  host:  127.0.0.1
+  port: 7687
+
+# 数据库日志配置
+database-mongodb:
+  db: trc20-usdt
+  host: 127.0.0.1
+  port: 27017
+  username:
+  password:
+# 日志配置
+zap:
+  level: info
+  format: console
+  prefix:
+  director: log
+  show-line: true
+  encode-level: LowercaseLevelEncoder
+  stacktrace-key: stacktrace
+  log-in-console: false
