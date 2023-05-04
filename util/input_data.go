@@ -22,7 +22,10 @@ func TransferFromParseData(data string) (string, string, uint64) {
 	b58FromAddress := addressHexToB58("41" + fromAddress[2:])
 	toAddress := data[94:136]
 	b58ToAddress := addressHexToB58("41" + toAddress[2:])
-	hexAmount := strings.TrimPrefix(data[136:200], "0000000000000000000000000000000000000000000000000000000")
+	hexAmount := ""
+	if len(data) == 200 {
+		hexAmount = strings.TrimPrefix(data[136:200], "0000000000000000000000000000000000000000000000000000000")
+	}
 	if hexAmount == "" {
 		return b58FromAddress, b58ToAddress, 0
 	}
